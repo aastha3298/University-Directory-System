@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Page Title</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="./StoreUniversity.js"></script>
+</head>
+
+<body>
+
+    <!-- Start of first page -->
+    <div data-role="page" id="home">
+
+        <div data-role="header">
+            <h1>Operations</h1>
+        </div><!-- /header -->
+
+        <div role="main" class="ui-content">
+            <ul data-role="listview" data-inset="true">
+                <li><a href="#save">Save</a></li>
+                <li><a href="#delete">Delete</a></li>
+                <li><a href="#search">Search</a></li>
+                <li><a href="#displayrecords">Display Records</a></li>
+            </ul>
+        </div><!-- /content -->
+
+        <div data-role="footer">
+            <h4>Page Footer</h4>
+        </div><!-- /footer -->
+    </div><!-- /page -->
+
+    <div data-role="page" id="save">
+
+        <div data-role="header">
+            <a href="#home">Back to operations</a>
+            <h1>Save</h1>
+        </div><!-- /header -->
+
+        <div data-role="content">
+            <br /><label for="name">Name:</label><input type='text' name='name' id='name'><label
+                for="address">Address:</label><input type='text' name='address' id='address'><label
+                for="phone">Phone:</label><input type="text" name='phone' id='phone'><br><button
+                onclick="saveInformation();">Save</button><br />
+        </div>
+
+        <div data-role="footer">
+            <h4>Page Footer</h4>
+        </div><!-- /footer -->
+    </div><!-- /page -->
+
+    <div data-role="page" id="delete">
+
+        <div data-role="header">
+            <a href="#home">Back to operations</a>
+            <h1>Delete</h1>
+        </div><!-- /header -->
+
+        <div data-role="content"><br /><label for="deleteKey">Name:</label><input type='text' name='deleteKey'
+                id='deleteKey'>
+            <button onclick="deleteInformation();">Delete</button><br>
+        </div>
+
+        <div data-role="footer">
+            <h4>Page Footer</h4>
+        </div><!-- /footer -->
+    </div><!-- /page -->
+
+    <div data-role="page" id="search">
+
+        <div data-role="header">
+            <a href="#home">Back to operations</a>
+            <h1>Search</h1>
+        </div><!-- /header -->
+
+        <div data-role="content">
+            <label for="searchName">Name:</label><input type='text' name='searchName' id='searchName'
+                disabled="true"><label for="searchAddress">Address:</label><input type='text' name='searchAddress'
+                id='searchAddress' disabled="true"><label for="searchPhone">Phone:</label><input type="text"
+                name='searchPhone' id='searchPhone' disabled="true">
+            <br /><label for="searchKey">Search:</label><input type="text" name='searchKey' id='searchKey'><button
+                onclick="searchInformation();">Search</button><br>
+        </div>
+
+        <div data-role="footer">
+            <h4>Page Footer</h4>
+        </div><!-- /footer -->
+    </div><!-- /page -->
+
+    <div data-role="page" id="displayrecords">
+
+        <div data-role="header">
+            <a href="#home">Back to operations</a>
+            <h1>Display Records</h1>
+        </div><!-- /header -->
+
+        <div data-role="content">
+            <table data-role="table" id="displayTable" data-mode="columntoggle"
+                class="ui-body-d ui-shadow table-stripe ui-responsive" data-column-btn-theme="b"
+                data-column-btn-text="Columns to display..." data-column-popup-theme="a">
+                <thead>
+                    <tr class="ui-bar-d">
+                        <th>Name</th>
+                        <th data-priority="2">Address</th>
+                        <th data-priority="3">Phone Number</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+
+        <div data-role="footer">
+            <h4>Page Footer</h4>
+        </div><!-- /footer -->
+    </div><!-- /page -->
+
+</body>
+
+</html>
